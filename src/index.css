@@ -1,0 +1,157 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+/* App layout */
+.app-container {
+  width: 100%;
+  max-width: 980px;
+  margin: 3rem auto;
+  padding: 1.25rem;
+}
+
+.title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.6rem;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  margin: 0 0 1.5rem 0;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.7);
+  font-weight: 400;
+}
+
+.search {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.search input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.06);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  color: inherit;
+}
+.search button {
+  padding: 0.7rem 1rem;
+  border-radius: 10px;
+}
+
+.muted { color: rgba(255,255,255,0.6); }
+.error { color: #ffb4b4; margin: 0.5rem 0 }
+
+/* DevCard styles */
+.devcard-wrap { display:flex; flex-direction:column; align-items:center }
+.devcard {
+  width: 100%;
+  max-width: 880px;
+  display: flex;
+  gap: 1rem;
+  padding: 1.25rem;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+  backdrop-filter: blur(8px) saturate(120%);
+  border: 1px solid rgba(255,255,255,0.04);
+  overflow: hidden;
+}
+.devcard-left { display:flex; align-items:center }
+.avatar-wrap { width: 120px; height: 120px; border-radius: 14px; overflow: hidden; }
+.avatar { width: 100%; height: 100%; object-fit: cover; display:block }
+.devcard-main { flex:1 }
+.header { display:flex; justify-content:space-between; align-items:center }
+.header h2 { margin:0; font-size:1.1rem }
+.header .muted { margin:0; font-size:0.9rem }
+.profile-link { color:inherit; opacity:0.8 }
+.stats { display:flex; gap:1rem; margin-top:0.8rem }
+.stat { flex:1; text-align:left }
+.stat .value { font-weight:700 }
+.langs { margin-top:0.6rem; display:flex; gap:0.5rem; flex-wrap:wrap }
+.lang { background: rgba(255,255,255,0.03); padding:0.3rem 0.6rem; border-radius:999px; font-size:0.85rem }
+.score-row { display:flex; align-items:center; gap:1rem; margin-top:1rem }
+.score-ring { width:64px; height:64px }
+.score-ring svg { width:64px; height:64px; transform: rotate(-90deg); }
+.ring-bg { fill:none; stroke:rgba(255,255,255,0.06); stroke-width:3.5; }
+.ring { fill:none; stroke: #7c5cff; stroke-width:3.5; stroke-linecap:round; stroke-dasharray: 100; stroke-dashoffset: 0; }
+.score-info { display:flex; flex-direction:column }
+.score-value { font-size:1.2rem; font-weight:800 }
+.score-label { font-size:0.85rem }
+
+.devcard-footer { margin-top:0.6rem; font-size:1rem; opacity:0.6; position: fixed; bottom: 1rem; left: 50%; transform: translateX(-50%); z-index: 10; }
+.jetty-text { font-weight: 600; display: inline-block; }
+
+/* responsive */
+@media (max-width:720px) {
+  .devcard { flex-direction:column; align-items:center }
+  .avatar-wrap { width:96px; height:96px }
+  .stats { gap:0.5rem }
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
