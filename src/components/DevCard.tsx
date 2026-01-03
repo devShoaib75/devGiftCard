@@ -3,6 +3,7 @@ import { motion, useMotionValue, useTransform } from 'framer-motion'
 import type { GitHubUser, Repo } from '../hooks/useGitHub'
 import computeActivityScore from '../utils/score'
 import { FiExternalLink } from 'react-icons/fi'
+import { QRCodeSVG } from 'qrcode.react'
 
 type Props = {
   user?: GitHubUser
@@ -18,6 +19,11 @@ function formatDate(d?: string | null) {
 
 export const DevCard: React.FC<Props> = ({ user, repos }) => {
   const score = useMemo(() => computeActivityScore(repos, user?.followers || 0), [repos, user])
+  
+  const shareUrl = useMemo(() => {
+    if (!user?.login) return ''
+    return `${window.location.origin}${window.location.pathname}?u=${user.login}`
+  }, [user?.login])
 
   // tilt effect
   const x = useMotionValue(0)
@@ -71,6 +77,17 @@ export const DevCard: React.FC<Props> = ({ user, repos }) => {
           <div className="avatar-wrap">
             <img src={user?.avatar_url} alt={user?.login} className="avatar" />
           </div>
+          {shareUrl && (
+            <div className="qr-wrap">
+              <QRCodeSVG 
+                value={shareUrl} 
+                size={100}
+                bgColor="transparent"
+                fgColor="#7c5cff"
+                level="M"
+              />
+            </div>
+          )}
         </div>
         <div className="devcard-main">
           <div className="header">

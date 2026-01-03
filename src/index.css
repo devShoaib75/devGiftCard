@@ -87,9 +87,10 @@ body {
   border: 1px solid rgba(255,255,255,0.04);
   overflow: hidden;
 }
-.devcard-left { display:flex; align-items:center }
+.devcard-left { display:flex; flex-direction:column; align-items:center; gap:0.8rem }
 .avatar-wrap { width: 120px; height: 120px; border-radius: 14px; overflow: hidden; }
 .avatar { width: 100%; height: 100%; object-fit: cover; display:block }
+.qr-wrap { padding: 0.5rem; background: rgba(255,255,255,0.05); border-radius: 10px; }
 .devcard-main { flex:1 }
 .header { display:flex; justify-content:space-between; align-items:center }
 .header h2 { margin:0; font-size:1.1rem }
