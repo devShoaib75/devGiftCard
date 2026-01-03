@@ -3,6 +3,7 @@ import './index.css'
 import './App.css'
 import useGitHub from './hooks/useGitHub'
 import DevCard from './components/DevCard'
+import BirthdayAnimation from './components/BirthdayAnimation'
 
 function parseQueryUser() {
   try {
@@ -37,6 +38,7 @@ export default function App() {
 
   return (
     <div id="root">
+      <BirthdayAnimation />
       <main className="app-container">
         <h1 className="title">Jetty DevCard</h1>
         <p className="subtitle">Transform your GitHub profile into a premium developer identity card</p>

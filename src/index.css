@@ -113,6 +113,39 @@ body {
 .devcard-footer { margin-top:0.6rem; font-size:1rem; opacity:0.6; position: fixed; bottom: 1rem; left: 50%; transform: translateX(-50%); z-index: 10; }
 .jetty-text { font-weight: 600; display: inline-block; }
 
+/* Birthday Animation */
+.birthday-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+}
+
+.birthday-text {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #7c5cff, #ff6b9d, #ffd93d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 4px 20px rgba(124, 92, 255, 0.3);
+  white-space: nowrap;
+}
+
 /* responsive */
 @media (max-width:720px) {
   .devcard { flex-direction:column; align-items:center }
