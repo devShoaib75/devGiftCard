@@ -20,7 +20,7 @@ export default function Comments() {
 
   async function loadComments() {
     try {
-      const res = await fetch('http://localhost:3001/api/comments')
+      const res = await fetch('/api/comments')
       const data = await res.json()
       setComments(data)
     } catch {
@@ -40,7 +40,7 @@ export default function Comments() {
     }
 
     try {
-      await fetch('http://localhost:3001/api/comments', {
+      await fetch('/api/comments', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(comment)

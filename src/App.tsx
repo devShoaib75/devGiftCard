@@ -4,6 +4,7 @@ import './App.css'
 import useGitHub from './hooks/useGitHub'
 import DevCard from './components/DevCard'
 import BirthdayAnimation from './components/BirthdayAnimation'
+import Memories from './components/Memories'
 import Comments from './components/Comments'
 
 function parseQueryUser() {
@@ -19,6 +20,7 @@ export default function App() {
   const qUser = useMemo(() => parseQueryUser(), [])
   const [username, setUsername] = useState<string | undefined>(qUser || 'shoaib3375')
   const [input, setInput] = useState('')
+  const [showMemories, setShowMemories] = useState(false)
 
   useEffect(() => {
     if (qUser) setInput(qUser)
@@ -40,6 +42,7 @@ export default function App() {
   return (
     <div id="root">
       <BirthdayAnimation />
+      {showMemories && <Memories onClose={() => setShowMemories(false)} />}
       <main className="app-container">
         <h1 className="title">Jetty DevCard</h1>
         <p className="subtitle">Transform your GitHub profile into a premium developer identity card</p>
@@ -63,6 +66,10 @@ export default function App() {
         <div className="notes muted">
           Tips: try <code>?u=torvalds</code> or any username. Share via URL.
         </div>
+
+        <button className="memories-btn" onClick={() => setShowMemories(true)}>
+          📸 View Memories
+        </button>
 
         <Comments />
       </main>
