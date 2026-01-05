@@ -5,7 +5,7 @@ export default function BirthdayAnimation() {
   const [show, setShow] = useState(true)
 
   useEffect(() => {
-    const timer = setTimeout(() => setShow(false), 4000)
+    const timer = setTimeout(() => setShow(false), 8000)
     return () => clearTimeout(timer)
   }, [])
 
@@ -16,9 +16,9 @@ export default function BirthdayAnimation() {
       className="birthday-overlay"
       initial={{ opacity: 1 }}
       animate={{ opacity: 0 }}
-      transition={{ delay: 3.5, duration: 0.5 }}
+      transition={{ delay: 7.5, duration: 0.5 }}
     >
-      {[...Array(30)].map((_, i) => (
+      {[...Array(50)].map((_, i) => (
         <motion.div
           key={i}
           className="confetti"
@@ -40,11 +40,29 @@ export default function BirthdayAnimation() {
       ))}
       <motion.div
         className="birthday-text"
-        initial={{ y: '100vh', scale: 0.5, opacity: 0 }}
-        animate={{ y: '40vh', scale: 1, opacity: 1 }}
-        transition={{ duration: 1, ease: 'easeOut' }}
+        initial={{ x: '100vw', opacity: 0, scale: 0.5 }}
+        animate={{ 
+          x: 0, 
+          opacity: 1, 
+          scale: [0.5, 1.2, 1],
+          rotate: [0, 5, -5, 0]
+        }}
+        transition={{ 
+          duration: 1.5, 
+          ease: 'easeOut',
+          scale: { times: [0, 0.6, 1], duration: 1.5 },
+          rotate: { delay: 1.5, duration: 0.5, repeat: Infinity, repeatDelay: 1 }
+        }}
       >
         🎉 Happy Birthday Jetty! 🎂
+      </motion.div>
+      <motion.div
+        className="birthday-subtext"
+        initial={{ y: 50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 1.5, duration: 0.8 }}
+      >
+        ✨ Wishing you an amazing year ahead! ✨
       </motion.div>
     </motion.div>
   )
