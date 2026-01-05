@@ -4,6 +4,7 @@ import './App.css'
 import useGitHub from './hooks/useGitHub'
 import DevCard from './components/DevCard'
 import BirthdayAnimation from './components/BirthdayAnimation'
+import Comments from './components/Comments'
 
 function parseQueryUser() {
   try {
@@ -62,6 +63,8 @@ export default function App() {
         <div className="notes muted">
           Tips: try <code>?u=torvalds</code> or any username. Share via URL.
         </div>
+
+        <Comments />
       </main>
     </div>
   )
