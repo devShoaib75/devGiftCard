@@ -81,7 +81,7 @@ export const DevCard: React.FC<Props> = ({ user, repos }) => {
             <div className="qr-wrap">
               <QRCodeSVG 
                 value={shareUrl} 
-                size={90}
+                size={75}
                 bgColor="transparent"
                 fgColor="#7c5cff"
                 level="M"
