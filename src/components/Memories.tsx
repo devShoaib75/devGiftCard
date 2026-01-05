@@ -4,7 +4,7 @@ import { FiChevronLeft, FiChevronRight, FiX } from 'react-icons/fi'
 
 // Dynamically import all images from photo folder
 const imageModules = import.meta.glob('/src/photo/*.{jpg,jpeg,png,gif,webp}', { eager: true })
-const images = Object.keys(imageModules).filter(path => !path.includes('recover.jpg'))
+const images = Object.keys(imageModules).filter(path => !path.includes('bg.jpg'))
 
 type Props = {
   onClose: () => void
