@@ -22,7 +22,7 @@ export default function Memories({ onClose }: Props) {
   useEffect(() => {
     const interval = setInterval(() => {
       next()
-    }, 5000) // Change image every 5 seconds
+    }, 60000) // Change image every 1 minute
     return () => clearInterval(interval)
   }, [current])
 
